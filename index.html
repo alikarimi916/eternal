@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>Stila — آخرین نور</title>
+
+    <meta
+        name="description"
+        content="یک داستان سه‌بعدی درباره چیزی که رفت و نوری که هنوز باقی مانده."
+    >
+
+    <!-- فونت -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Three.js -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+        defer
+    ></script>
+
+    <!-- فایل استایل -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         صفحه اصلی
+    ========================================== -->
+
+    <main id="app">
+
+        <!-- پس‌زمینه سه‌بعدی -->
+        <canvas id="three-canvas"></canvas>
+
+
+        <!-- لایه تاریک روی صحنه -->
+        <div class="dark-overlay"></div>
+
+
+        <!-- نور محیط -->
+        <div class="ambient-glow glow-one"></div>
+        <div class="ambient-glow glow-two"></div>
+
+
+        <!-- =====================================
+             صفحه شروع
+        ====================================== -->
+
+        <section id="intro" class="screen active">
+
+            <div class="intro-content">
+
+                <div class="small-text">
+                    یک داستان برای کسی که رفت...
+                </div>
+
+                <h1 class="main-title">
+                    <span>Setila</span>
+                </h1>
+
+                <div class="title-line"></div>
+
+                <p class="subtitle">
+                    بعضی آدم‌ها می‌روند،
+                    <br>
+                    اما چیزی از آن‌ها
+                    <br>
+                    برای همیشه می‌ماند.
+                </p>
+
+                <button id="start-btn" class="start-button">
+                    <span>وارد شو</span>
+                    <span class="button-arrow">←</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             صحنه اصلی
+        ====================================== -->
+
+        <section id="story" class="screen">
+
+            <div class="story-content">
+
+                <div class="story-number">
+                    01
+                </div>
+
+                <h2>
+                    همه چیز
+                    <br>
+                    از یک نور شروع شد...
+                </h2>
+
+                <p>
+                    نوری که فکر می‌کردم
+                    قرار است همیشه بماند.
+                </p>
+
+                <button id="continue-btn" class="continue-button">
+                    ادامه داستان
+                    <span>↓</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             صحنه قلب
+        ====================================== -->
+
+        <section id="heart-scene" class="screen">
+
+            <div class="heart-content">
+
+                <div class="heart-label">
+                    هنوز اینجاست...
+                </div>
+
+                <div id="heart-container"></div>
+
+                <p class="heart-text">
+                    بعضی چیزها حتی وقتی شکسته‌اند،
+                    <br>
+                    هنوز می‌تپند.
+                </p>
+
+                <button id="break-heart" class="ghost-button">
+                    لمسش کن
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             پایان
+        ====================================== -->
+
+        <section id="ending" class="screen">
+
+            <div class="ending-content">
+
+                <div class="ending-line"></div>
+
+                <h2>
+                    Setila
+                </h2>
+
+
+                <div class="final-message">
+                    بعضی خداحافظی‌ها
+                    <br>
+                    هیچ‌وقت تمام نمی‌شوند.
+                </div>
+
+                <div class="end-symbol">
+                    ✦
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             کنترل موسیقی
+        ====================================== -->
+
+        <button
+            id="music-toggle"
+            class="music-button"
+            aria-label="کنترل موسیقی"
+        >
+            <span class="music-icon">♫</span>
+        </button>
+
+
+        <!-- =====================================
+             نشانگر اسکرول
+        ====================================== -->
+
+        <div id="scroll-indicator" class="scroll-indicator">
+
+            <span>اسکرول کن</span>
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+
+        <!-- =====================================
+             لودر
+        ====================================== -->
+
+        <div id="loader" class="loader">
+
+            <div class="loader-inner">
+
+                <div class="loader-heart">
+                    ♥
+                </div>
+
+                <div class="loader-text">
+                    در حال باز شدن خاطره...
+                </div>
+
+                <div class="loader-progress">
+                    <div id="loader-progress-bar"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         JavaScript
+    ========================================== -->
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
